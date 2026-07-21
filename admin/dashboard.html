@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Panel — Real</title>
+  <meta name="description" content="Xəbər əlavə et, redaktə et və idarə et.">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="../index.html">Real</a>
+      <div class="admin-header-actions">
+        <button id="logout-btn" class="btn ghost">Çıxış</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container admin-container">
+    <section class="admin-panel">
+      <div class="admin-actions">
+        <button id="new-news-btn" class="btn">Yeni xəbər əlavə et</button>
+        <input id="filter-input" type="search" placeholder="Xəbərləri axtar..." />
+      </div>
+
+      <div id="news-list" class="admin-list"></div>
+    </section>
+
+    <section id="editor-section" class="editor-section hidden">
+      <h2 id="editor-title">Yeni xəbər</h2>
+      <form id="editor-form" class="card">
+        <label>Başlıq
+          <input id="news-title" type="text" required>
+        </label>
+        <label>Kateqoriya
+          <div class="row">
+            <select id="news-category"></select>
+            <input id="new-category-input" type="text" placeholder="Yeni kateqoriya əlavə et">
+            <button type="button" id="add-category-btn" class="btn ghost">Əlavə et</button>
+          </div>
+        </label>
+        <label>Qısa açıqlama (SEO üçün)
+          <input id="news-description" type="text" placeholder="Qısa açıqlama">
+        </label>
+        <label>Tam məzmun
+          <textarea id="news-content" rows="10" required></textarea>
+        </label>
+        <label>Etiketlər (vergül ilə ayrın)
+          <input id="news-tags" type="text" placeholder="siyasət, idman, dünya">
+        </label>
+        <label>Öne çıxan şəkil
+          <input id="news-featured" type="file" accept="image/*">
+        </label>
+        <label>Əlavə şəkillər (birneçəsini seçin)
+          <input id="news-images" type="file" accept="image/*" multiple>
+        </label>
+        <label>Videolar (mp4)
+          <input id="news-videos" type="file" accept="video/*" multiple>
+        </label>
+        <label>Yayınlanma tarixi
+          <input id="news-published" type="datetime-local">
+        </label>
+        <div class="editor-actions">
+          <button id="save-news-btn" class="btn">Yadda saxla</button>
+          <button id="cancel-news-btn" type="button" class="btn ghost">İmtina et</button>
+          <button id="delete-news-btn" type="button" class="btn danger hidden">Sil</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>© <span id="year-admin"></span> Real — Admin panel</div>
+  </footer>
+
+  <script src="../assets/js/utils.js"></script>
+  <script src="../assets/js/admin.js"></script>
+  <script>
+    // Admin panel işə salınır
+    AdminAuth.protectPage();
+    AdminPanel.init();
+  </script>
+</body>
+</html>
