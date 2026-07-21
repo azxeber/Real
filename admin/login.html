@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Girişi — Real</title>
+  <meta name="description" content="Admin panelə daxil olma səhifəsi.">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="auth-page">
+  <main class="container auth-container">
+    <h1>Admin Girişi</h1>
+    <form id="login-form" class="card auth-card" autocomplete="off">
+      <label>İstifadəçi adı
+        <input id="admin-username" name="username" type="text" placeholder="İstifadəçi adı" required>
+      </label>
+      <label>Şifrə
+        <input id="admin-password" name="password" type="password" placeholder="Şifrə" required>
+      </label>
+      <button type="submit" class="btn">Daxil ol</button>
+      <div class="muted">Əgər ilk dəfədirsə, burada təyin etdiyiniz hesab idarəçi hesabı olacaq.</div>
+    </form>
+  </main>
+
+  <script src="../assets/js/utils.js"></script>
+  <script src="../assets/js/admin.js"></script>
+  <script>
+    // Əmr: login səhifəsi üçün admin.js istifadə edin
+    AdminAuth.initLogin();
+  </script>
+</body>
+</html>

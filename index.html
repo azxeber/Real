@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Real — Ən son xəbərlər</title>
+  <meta name="description" content="Ən son xəbərlər, kateqoriyalar və müəllif məqalələri.">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#/">Real</a>
+      <form id="search-form" class="search-form" role="search" aria-label="Xəbərlər üzrə axtarış">
+        <input id="search-input" name="q" type="search" placeholder="Axtar..." aria-label="Axtar">
+      </form>
+      <button id="theme-toggle" class="icon-btn" title="Tünd/İşıq rejimi">🌓</button>
+      <a class="admin-link" href="admin/login.html" title="Admin panel">İdarəetmə</a>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" aria-label="Əsas menyu">
+    <a href="#/" class="nav-item">Əsas</a>
+    <a href="#/kateqoriyalar" class="nav-item">Kateqoriyalar</a>
+    <a href="#/favorit" class="nav-item">Bəyənilənlər</a>
+  </nav>
+
+  <main id="app" class="container" role="main">
+    <!-- SPA məzmun JS tərəfindən doldurulacaq -->
+  </main>
+
+  <footer class="footer">
+    <div>© <span id="year"></span> Real — Bütün hüquqlar qorunur.</div>
+  </footer>
+
+  <template id="card-template">
+    <article class="card">
+      <a class="card-link" href="">
+        <div class="card-media"></div>
+        <h2 class="card-title"></h2>
+      </a>
+      <div class="card-meta"></div>
+    </article>
+  </template>
+
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
